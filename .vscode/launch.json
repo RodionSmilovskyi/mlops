@@ -17,7 +17,7 @@
                 "--bucket",
                 "rodions-mlops",
                 "--days",
-                "7"
+                "30"
             ]
         }
     ]
