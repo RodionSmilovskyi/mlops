@@ -19,6 +19,17 @@
                 "--days",
                 "30"
             ]
+        },
+        {
+            "name": "Debug upload function",
+            "type": "python",
+            "request": "launch",
+            "module": "functions_framework",
+            "args": [
+                "--target",
+                "upload",
+                "--debug"
+            ]
         }
     ]
 }
