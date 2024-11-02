@@ -106,7 +106,8 @@ def upload(request: flask.Request) -> flask.typing.ResponseReturnValue:
 
         for t in tickers.split(","):
             ticker_name = t.strip().lower()
-            new_ticker_df = cast(pd.DataFrame, data[ticker_name.upper()])
+            new_ticker_df = cast(pd.DataFrame, data[ticker_name.upper()]).round(3)
+            
             saved_ticker_df = dowload_saved_data(
                 storage_client, bucket, ticker_name, logger
             )
