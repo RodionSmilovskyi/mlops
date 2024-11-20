@@ -30,6 +30,60 @@
                 "upload",
                 "--debug"
             ]
-        }
+        },
+        {
+            "name": "Debug analyzer",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "analyzer",
+            "args": [
+                "--ticker",
+                "amat"
+            ]
+        },
+        {
+            "name": "Debug predictor",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "predictor",
+            "args": [
+                "--ticker",
+                "amat",
+                "--start-date",
+                "2016-01-01",
+                "--end-date",
+                "2023-12-30"
+
+            ]
+        },
+        {
+            "name": "Debug evaluator",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "evaluator",
+            "args": [
+                "--ticker",
+                "amat",
+                "--start-date",
+                "2024-01-01",
+                "--end-date",
+                "2024-11-01"
+
+            ]
+        },
+        {
+            "name": "Debug fastapi service",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/prediction_service",
+                "WRAPT_DISABLE_EXTENSIONS": "true"
+            },
+            "args": [
+                "service:app",
+                "--reload"
+            ]
+        },
     ]
 }
